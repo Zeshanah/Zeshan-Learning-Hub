@@ -42,3 +42,15 @@ html[data-theme=dark] .process-main:hover,html[data-theme=dark] .process-detail{
 html[data-theme=dark] .process-detail code{background:#183a35;color:#9fe1d4}
 @media(max-width:900px){.lesson-grid{grid-template-columns:1fr}.otc-flow{justify-content:flex-start}}
 @media(max-width:760px){.process-main{grid-template-columns:45px 1fr 25px}.process-main>code{display:none}.process-detail{padding:14px 16px 18px}.flow-diagram svg{min-width:650px}}
+.dtz-practice{margin-top:20px}
+.dtz-practice[hidden]{display:none}
+.dtz-practice ul,.dtz-practice ol{padding-left:22px;line-height:1.7}
+.dtz-practice li{margin:4px 0}
+.practice-box{margin-top:18px;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--panel-2,#f7faf9)}
+.answer-btn{margin:6px 0 10px;padding:9px 13px;border:1px solid var(--border);border-radius:9px;background:var(--panel);cursor:pointer;font-weight:700}
+.answer-reveal{margin:8px 0 0;padding:10px;border-left:3px solid var(--accent);background:var(--panel)}
+.source-link{display:inline-block;margin-top:18px;font-weight:700}
+.vocab-grid,.grammar-detail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.vocab-grid>div,.grammar-detail>div{padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--panel-2,#f7faf9)}
+.vocab-grid span{display:block;margin-top:5px;color:var(--muted)}
+@media(max-width:760px){.vocab-grid,.grammar-detail{grid-template-columns:1fr}}
