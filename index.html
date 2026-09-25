@@ -177,20 +177,61 @@
       </section>
 
       <section id="jobs" class="tab">
-        <div class="section-head"><div><span class="eyebrow">CAREER</span><h2>CV-aligned live job board</h2></div><button class="primary" id="refreshJobs">Refresh search links</button></div>
-        <div class="notice">Profile signals used for matching: SAP S/4HANA SD, OTC, master data, pricing, delivery/billing, UAT, Fiori, project coordination, customer operations, English and German B1. These are taken from the uploaded CV. <a href="https://www.arbeitsagentur.de/jobsuche/" target="_blank">BA Jobsuche ↗</a></div>
-        <div class="job-filters">
-          <button class="chip active" data-country="all">All</button><button class="chip" data-country="DE">Germany</button><button class="chip" data-country="AT">Austria</button><button class="chip" data-country="CH">Switzerland</button><button class="chip" data-country="UK">UK</button>
-        </div>
-        <div id="jobsGrid" class="jobs-grid"></div>
-        <div class="source-grid">
-          <a target="_blank" href="https://www.arbeitsagentur.de/jobsuche/">Germany · Bundesagentur für Arbeit Jobsuche ↗</a>
-          <a target="_blank" href="https://www.ams.at/arbeitsuchende/arbeitslos-was-tun/jobsuche-online-und-mobil">Austria · AMS eJob-Room ↗</a>
-          <a target="_blank" href="https://www.arbeit.swiss/en/jobseekers">Switzerland · Job-Room ↗</a>
-          <a target="_blank" href="https://www.gov.uk/find-a-job">UK · Find a job ↗</a>
-        </div>
-        <p class="small-note">Important: a static site hosted only on GitHub Pages/Cloudflare Pages cannot safely scrape every job board. This build uses live search links and a seeded current snapshot. The included <code>jobs-update.yml</code> shows where a scheduled feed/API updater can be added when a permitted feed or API is available.</p>
-      </section>
+  <div class="section-head">
+    <div><span class="eyebrow">CAREER</span><h2>CV-aligned SAP SD & Order Management jobs</h2></div>
+    <button class="primary" id="refreshJobs">Refresh job sources</button>
+  </div>
+  <div class="notice">
+    <b>Current snapshot:</b> researched for 25 Sep 2026. The board now includes SAP SD Consultant, SD Analyst, SAP User/Key User, Inhouse/Application roles, Associate Consultant searches and Order Management / OTC roles across Germany, Austria, Switzerland and the UK.
+    <br><span class="small-note">Profile signals used for the descriptive match: SAP S/4HANA SD, OTC, master data, pricing, delivery/billing, UAT, Fiori, project coordination, customer operations, English and German B1. These are taken from the uploaded CV.</span>
+  </div>
+
+  <div class="job-search-bar">
+    <input id="jobSearch" class="filter" placeholder="Search title, SAP skills, OTC, order management, key user, analyst...">
+    <button class="secondary" id="clearJobFilters">Clear filters</button>
+  </div>
+
+  <div class="job-filter-row">
+    <div class="job-filter-group">
+      <span class="filter-label">Country</span>
+      <div class="job-filters">
+        <button class="chip active" data-country="all">All</button><button class="chip" data-country="DE">Germany</button><button class="chip" data-country="AT">Austria</button><button class="chip" data-country="CH">Switzerland</button><button class="chip" data-country="UK">UK</button>
+      </div>
+    </div>
+    <label><span class="filter-label">Role family</span>
+      <select id="jobRoleFilter" class="filter"><option value="all">All roles</option><option value="Consultant">Consultant</option><option value="Key User">Key User</option><option value="Order Management">Order Management</option><option value="Associate Consultant">Associate Consultant</option><option value="Inhouse Consultant">Inhouse Consultant</option><option value="SD Analyst">SD Analyst</option><option value="Application Manager">Application Manager</option><option value="SD Specialist / Key User">SD Specialist / Key User</option><option value="Key User / Order Management">Key User / Order Management</option></select>
+    </label>
+    <label><span class="filter-label">Language</span>
+      <select id="jobLanguageFilter" class="filter"><option value="all">Any</option><option value="English">English</option><option value="German">German</option></select>
+    </label>
+    <label><span class="filter-label">Work model</span>
+      <select id="jobWorkFilter" class="filter"><option value="all">Any</option><option value="Hybrid">Hybrid</option><option value="Remote">Remote</option><option value="Onsite">Onsite</option></select>
+    </label>
+  </div>
+
+  <div class="job-summary"><span id="jobCount"></span><span>Mid-level / experienced individual-contributor focus; senior/lead/manager/architect titles excluded from the snapshot.</span></div>
+  <div id="jobsGrid" class="jobs-grid"></div>
+
+  <div class="panel role-search-panel">
+    <div class="panel-title"><h3>Live role searches to broaden the net</h3></div>
+    <div class="role-search-grid">
+      <a target="_blank" href="https://de.indeed.com/q-sap-associate-consultant-jobs.html"><b>Associate SAP Consultant</b><span>Germany · search current associate/consultant openings and filter SD/S/4HANA.</span></a>
+      <a target="_blank" href="https://www.xing.com/jobs/sap-key-user"><b>SAP Key User / SAP User</b><span>Germany · current Key User results across business-process roles.</span></a>
+      <a target="_blank" href="https://de.indeed.com/q-order-management-specialist-jobs.html"><b>Order Management Specialist</b><span>Germany · SAP SD / order processing / export operations.</span></a>
+      <a target="_blank" href="https://uk.linkedin.com/jobs/sap-order-management-jobs"><b>UK SAP Order Management</b><span>UK · filter Associate and Mid-Senior experience levels.</span></a>
+      <a target="_blank" href="https://www.stepstone.de/jobs/sap-sd-analyst"><b>SAP SD Analyst</b><span>Germany · analyst and application-support search.</span></a>
+      <a target="_blank" href="https://www.glassdoor.co.uk/Job/united-kingdom-sap-sd-consultant-jobs-SRCH_IL.0%2C14_IN2_KO15%2C32.htm"><b>UK SAP SD Consultant</b><span>UK · filter out Senior/Lead roles.</span></a>
+    </div>
+  </div>
+
+  <div class="source-grid">
+    <a target="_blank" href="https://www.arbeitsagentur.de/jobsuche/">Germany · Bundesagentur für Arbeit Jobsuche ↗</a>
+    <a target="_blank" href="https://www.ams.at/arbeitsuchende/arbeitslos-was-tun/jobsuche-online-und-mobil">Austria · AMS eJob-Room ↗</a>
+    <a target="_blank" href="https://www.arbeit.swiss/en/jobseekers">Switzerland · Job-Room ↗</a>
+    <a target="_blank" href="https://www.gov.uk/find-a-job">UK · Find a job ↗</a>
+  </div>
+  <p class="small-note">Job availability changes quickly. This static site cannot safely scrape every job board. Each card therefore combines a researched snapshot with a live employer/recruiter/search link; always verify the live posting, location, language, experience and closing status before applying.</p>
+</section>
 
       <section id="progress" class="tab">
         <div class="section-head"><div><span class="eyebrow">TRACKING</span><h2>Your progress</h2></div><button class="secondary" id="resetProgress">Reset progress</button></div>
