@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Personal SAP SD, DTZ B1 and career learning hub">
+  <title>Zeshan Learning Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">ZH</div>
+        <div><strong>Zeshan</strong><span>Learning Hub</span></div>
+      </div>
+      <nav id="nav">
+        <button class="nav-item active" data-tab="dashboard">⌂ <span>Dashboard</span></button>
+        <button class="nav-item" data-tab="sap">▦ <span>SAP SD / OTC</span></button>
+        <button class="nav-item" data-tab="scenarios">◈ <span>Exam Scenarios</span></button>
+        <button class="nav-item" data-tab="tcodes">⌘ <span>T-Codes</span></button>
+        <button class="nav-item" data-tab="interview">◎ <span>Interview Q&A</span></button>
+        <button class="nav-item" data-tab="dtz">🇩🇪 <span>DTZ B1</span></button>
+        <button class="nav-item" data-tab="jobs">⌁ <span>Live Jobs</span></button>
+        <button class="nav-item" data-tab="progress">✓ <span>Progress</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button id="themeBtn" class="ghost-btn">☾ <span>Dark mode</span></button>
+        <a class="ghost-btn link-btn" href="README.md">ⓘ <span>Setup & notes</span></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+        <div class="search-wrap">
+          <span>⌕</span><input id="globalSearch" placeholder="Search SAP, DTZ, T-codes, questions..." autocomplete="off">
+        </div>
+        <div class="top-actions">
+          <span class="pill">B1 German</span>
+          <span class="pill">SAP SD</span>
+          <div class="avatar">ZA</div>
+        </div>
+      </header>
+
+      <section id="dashboard" class="tab active">
+        <div class="hero">
+          <div>
+            <div class="eyebrow">PERSONAL LEARNING HUB</div>
+            <h1>Build SAP confidence.<br><em>Pass B1.</em> Find your next role.</h1>
+            <p>One focused workspace for SAP S/4HANA Sales & Distribution, scenario-based certification preparation, DTZ B1 practice and CV-aligned job searching.</p>
+            <div class="hero-actions">
+              <button class="primary" data-go="sap">Continue SAP →</button>
+              <button class="secondary" data-go="dtz">Practice DTZ B1</button>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="mini-label">YOUR PROFILE</div>
+            <h3>SAP Associate Consultant — SD</h3>
+            <p>Berlin · English · German B1</p>
+            <div class="stat-row"><strong>13+</strong><span>years operations / customer service</span></div>
+            <div class="stat-row"><strong>OTC</strong><span>sales → delivery → billing</span></div>
+            <div class="stat-row"><strong>PMP®</strong><span>project-management capability</span></div>
+          </div>
+        </div>
+
+        <div class="section-head"><div><span class="eyebrow">TODAY</span><h2>Study dashboard</h2></div><span id="lastSaved" class="muted">Progress saved locally</span></div>
+        <div class="metrics">
+          <div class="metric-card"><span>SAP modules</span><strong>8</strong><small>core learning areas</small></div>
+          <div class="metric-card"><span>Exam scenarios</span><strong>12</strong><small>business situations</small></div>
+          <div class="metric-card"><span>T-codes</span><strong>45+</strong><small>quick reference</small></div>
+          <div class="metric-card"><span>DTZ areas</span><strong>6</strong><small>reading to speaking</small></div>
+        </div>
+
+        <div class="two-col">
+          <div class="panel">
+            <div class="panel-title"><h3>Learning path</h3><span class="muted">check as you go</span></div>
+            <div id="learningPath" class="checklist"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-title"><h3>Quick reference</h3></div>
+            <div class="quick-grid">
+              <button data-go="tcodes"><b>VA01</b><span>Create sales order</span></button>
+              <button data-go="tcodes"><b>VL01N</b><span>Create outbound delivery</span></button>
+              <button data-go="tcodes"><b>VF01</b><span>Create billing document</span></button>
+              <button data-go="interview"><b>Q&A</b><span>Interview practice</span></button>
+              <button data-go="dtz"><b>DTZ</b><span>Exam structure</span></button>
+              <button data-go="jobs"><b>Jobs</b><span>CV-aligned searches</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sap" class="tab">
+        <div class="section-head"><div><span class="eyebrow">SAP S/4HANA SALES</span><h2>Full business process</h2></div><span class="badge">Order-to-Cash</span></div>
+        <div class="notice">This learning path is designed around the current shift toward practical, performance-based SAP certification. SAP says certifications are moving away from multiple-choice toward system- and/or scenario-based assessments during 2026. <a target="_blank" rel="noreferrer" href="https://learning.sap.com/helpcenter/certification-support/exam-essentials">SAP exam essentials ↗</a></div>
+        <div class="process" id="process"></div>
+        <div class="panel">
+          <div class="panel-title"><h3>Integration map</h3></div>
+          <div class="integration-grid">
+            <div><b>SD ↔ FI</b><span>billing → accounting document, revenue, receivables</span></div>
+            <div><b>SD ↔ MM</b><span>availability, procurement, stock and delivery</span></div>
+            <div><b>SD ↔ EWM/LE</b><span>warehouse, picking, packing and goods issue</span></div>
+            <div><b>SD ↔ CO</b><span>profitability and management reporting</span></div>
+            <div><b>SD ↔ Output</b><span>forms, email, print and electronic outputs</span></div>
+            <div><b>SD ↔ EDI/IDoc</b><span>customer/vendor document exchange</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="scenarios" class="tab">
+        <div class="section-head"><div><span class="eyebrow">NEW-STYLE PREPARATION</span><h2>Business scenarios</h2></div><span class="muted">Explain what you would do, why, and how you validate it.</span></div>
+        <div class="scenario-grid" id="scenarioGrid"></div>
+      </section>
+
+      <section id="tcodes" class="tab">
+        <div class="section-head"><div><span class="eyebrow">QUICK REFERENCE</span><h2>T-Codes & shortcuts</h2></div><input class="filter" id="tcodeFilter" placeholder="Filter T-codes..."></div>
+        <div class="panel table-panel">
+          <table><thead><tr><th>T-Code</th><th>Purpose</th><th>Shortcut / note</th></tr></thead><tbody id="tcodeBody"></tbody></table>
+        </div>
+      </section>
+
+      <section id="interview" class="tab">
+        <div class="section-head"><div><span class="eyebrow">INTERVIEW MODE</span><h2>Interview questions & answers</h2></div><button class="secondary" id="randomQuestion">Random question</button></div>
+        <div class="qa-layout">
+          <div id="qaList" class="qa-list"></div>
+          <div class="panel qa-tip"><div class="eyebrow">ANSWER FRAME</div><h3>Business → SAP → validation</h3><p>Start with the business requirement, name the relevant SD object/process, explain the checks or integration points, then describe how you would test the result.</p><div class="tip-list"><span>1. Clarify</span><span>2. Analyse</span><span>3. Configure / execute</span><span>4. Test</span><span>5. Document</span></div></div>
+        </div>
+      </section>
+
+      <section id="dtz" class="tab">
+        <div class="section-head"><div><span class="eyebrow">GERMAN</span><h2>DTZ B1 preparation</h2></div><span class="badge">Deutsch-Test für Zuwanderer</span></div>
+        <div class="notice">The official Goethe DTZ preparation area provides exercises for Lesen, Hören, Sprechen and Schreiben plus a model set, listening files, exam handbook and word list. Use the official materials for the authoritative exam format. <a target="_blank" rel="noreferrer" href="https://www.goethe.de/de/spr/mig/deu.html">Official DTZ materials ↗</a></div>
+        <div class="exam-grid">
+          <div class="exam-card"><b>Lesen</b><span>5 practice task types</span><button data-dtz="lesen">Open practice</button></div>
+          <div class="exam-card"><b>Hören</b><span>4 listening task areas</span><button data-dtz="hoeren">Open practice</button></div>
+          <div class="exam-card"><b>Schreiben</b><span>Message / letter practice</span><button data-dtz="schreiben">Open practice</button></div>
+          <div class="exam-card"><b>Sprechen</b><span>3 speaking tasks</span><button data-dtz="sprechen">Open practice</button></div>
+          <div class="exam-card"><b>Wortschatz</b><span>Everyday German</span><button data-dtz="wortschatz">Study</button></div>
+          <div class="exam-card"><b>Grammatik</b><span>High-value B1 structures</span><button data-dtz="grammatik">Study</button></div>
+        </div>
+        <div class="two-col">
+          <div class="panel">
+            <div class="panel-title"><h3>Grammar checklist</h3></div>
+            <div id="grammarList" class="grammar-list"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-title"><h3>Official practice & model papers</h3></div>
+            <div class="resource-list">
+              <a target="_blank" href="https://www.goethe.de/de/spr/mig/deu.html">DTZ Modellsatz + Hörbeispiele + Prüfungshandbuch</a>
+              <a target="_blank" href="https://www.goethe.de/de/spr/mig/deu/sp1.html">DTZ Sprechen 1</a>
+              <a target="_blank" href="https://www.goethe.de/de/spr/mig/deu/sp2.html">DTZ Sprechen 2</a>
+              <a target="_blank" href="https://www.goethe.de/de/spr/mig/deu/sp3.html">DTZ Sprechen 3</a>
+              <a target="_blank" href="https://www.goethe.de/ins/de/en/m/spr/prf/gzb1/inf.html">Goethe-Zertifikat B1 format & preparation</a>
+            </div>
+            <p class="small-note">The site links to official model papers rather than reproducing copyrighted exam papers. Add your own legally obtained past papers to the <code>materials/</code> folder and link them from this section.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="jobs" class="tab">
+        <div class="section-head"><div><span class="eyebrow">CAREER</span><h2>CV-aligned live job board</h2></div><button class="primary" id="refreshJobs">Refresh search links</button></div>
+        <div class="notice">Profile signals used for matching: SAP S/4HANA SD, OTC, master data, pricing, delivery/billing, UAT, Fiori, project coordination, customer operations, English and German B1. These are taken from the uploaded CV. <a href="https://www.arbeitsagentur.de/jobsuche/" target="_blank">BA Jobsuche ↗</a></div>
+        <div class="job-filters">
+          <button class="chip active" data-country="all">All</button><button class="chip" data-country="DE">Germany</button><button class="chip" data-country="AT">Austria</button><button class="chip" data-country="CH">Switzerland</button><button class="chip" data-country="UK">UK</button>
+        </div>
+        <div id="jobsGrid" class="jobs-grid"></div>
+        <div class="source-grid">
+          <a target="_blank" href="https://www.arbeitsagentur.de/jobsuche/">Germany · Bundesagentur für Arbeit Jobsuche ↗</a>
+          <a target="_blank" href="https://www.ams.at/arbeitsuchende/arbeitslos-was-tun/jobsuche-online-und-mobil">Austria · AMS eJob-Room ↗</a>
+          <a target="_blank" href="https://www.arbeit.swiss/en/jobseekers">Switzerland · Job-Room ↗</a>
+          <a target="_blank" href="https://www.gov.uk/find-a-job">UK · Find a job ↗</a>
+        </div>
+        <p class="small-note">Important: a static site hosted only on GitHub Pages/Cloudflare Pages cannot safely scrape every job board. This build uses live search links and a seeded current snapshot. The included <code>jobs-update.yml</code> shows where a scheduled feed/API updater can be added when a permitted feed or API is available.</p>
+      </section>
+
+      <section id="progress" class="tab">
+        <div class="section-head"><div><span class="eyebrow">TRACKING</span><h2>Your progress</h2></div><button class="secondary" id="resetProgress">Reset progress</button></div>
+        <div class="progress-hero"><div class="progress-ring"><span id="progressPct">0%</span></div><div><h3>Keep the streak practical.</h3><p>Tick lessons and grammar topics as you complete them. Progress is stored in this browser using localStorage.</p></div></div>
+        <div class="panel"><div id="progressDetails" class="progress-details"></div></div>
+      </section>
+
+      <footer>Built as a free static learning hub · Data is stored locally in your browser · Verify official exam requirements before booking an exam.</footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
