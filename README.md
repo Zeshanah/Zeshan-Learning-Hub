@@ -59,3 +59,5 @@ The job-matching profile was built from the uploaded CV:
 
 ## Job-level filter
 The job board is intentionally focused on mid-level / consultant roles. Senior, lead, manager and architect roles are excluded from the displayed snapshot. Some countries may show a live search link rather than a verified individual posting when a current non-senior match cannot be confirmed.
+
+- Expandable SAP process steps with detailed learning notes, checks, transaction references and exam focus.

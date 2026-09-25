@@ -93,8 +93,22 @@
 
       <section id="sap" class="tab">
         <div class="section-head"><div><span class="eyebrow">SAP S/4HANA SALES</span><h2>Full business process</h2></div><span class="badge">Order-to-Cash</span></div>
-        <div class="notice">This learning path is designed around the current shift toward practical, performance-based SAP certification. SAP says certifications are moving away from multiple-choice toward system- and/or scenario-based assessments during 2026. <a target="_blank" rel="noreferrer" href="https://learning.sap.com/helpcenter/certification-support/exam-essentials">SAP exam essentials ↗</a></div>
-        <div class="process" id="process"></div>
+        <div class="source-note"><b>Learning basis:</b> SAP's official learning content describes the order-to-cash chain, sales document structure, pricing, delivery, billing and FI integration. The practical-certification section should always be checked against the specific certification's current exam page. <a target="_blank" href="https://learning.sap.com/courses/exploring-sap-s-4hana-sales-essentials">SAP S/4HANA Sales Essentials ↗</a> · <a target="_blank" href="https://learning.sap.com/helpcenter/certification-support/certification-practical-exam">SAP practical exam FAQ ↗</a></div><div class="notice"><strong>Tip:</strong> Click any process step below to expand the full learning notes, key checks and exam focus. This learning path is designed around the current shift toward practical, performance-based SAP certification. SAP says certifications are moving away from multiple-choice toward system- and/or scenario-based assessments during 2026. <a target="_blank" rel="noreferrer" href="https://learning.sap.com/helpcenter/certification-support/exam-essentials">SAP exam essentials ↗</a></div>
+        
+<div class="panel otc-diagram-panel">
+  <div class="panel-title"><h3>End-to-end OTC map</h3><span class="muted">Click a step below for the detailed lesson</span></div>
+  <div class="otc-flow">
+    <div class="otc-node"><b>01</b><span>Customer / BP</span><small>Master Data</small></div>
+    <i>→</i><div class="otc-node"><b>03</b><span>Quotation</span><small>Presales</small></div>
+    <i>→</i><div class="otc-node active"><b>04</b><span>Sales Order</span><small>VA01</small></div>
+    <i>→</i><div class="otc-node"><b>05</b><span>ATP</span><small>Confirmation</small></div>
+    <i>→</i><div class="otc-node"><b>06–08</b><span>Delivery</span><small>Pick → PGI</small></div>
+    <i>→</i><div class="otc-node"><b>09</b><span>Billing</span><small>VF01</small></div>
+    <i>→</i><div class="otc-node"><b>10</b><span>FI</span><small>A/R + Revenue</small></div>
+  </div>
+  <div class="integration-strip"><span>SD</span><em>↔</em><span>MM / ATP</span><em>↔</em><span>LE / EWM</span><em>↔</em><span>FI / CO</span><em>↔</em><span>Customer</span></div>
+</div>
+<div class="process" id="process"></div>
         <div class="panel">
           <div class="panel-title"><h3>Integration map</h3></div>
           <div class="integration-grid">
