@@ -158,14 +158,21 @@ function flowSvg(flow){
  const boxes=parts.map((p,i)=>{
    const x=20+i*((w-40)/(parts.length));
    const bw=Math.min(145,(w-60)/parts.length);
-   return `<g><rect x="${x}" y="28" width="${bw}" height="62" rx="12" fill="${i%3===0?'#e5f4f1':i%3===1?'#fff2d9':'#eef0ff'}" stroke="#cbded9"/><text x="${x+bw/2}" y="54" text-anchor="middle" font-size="11" font-weight="700" fill="#17302b">${p.length>22?p.slice(0,21)+"…":p}</text>${i<parts.length-1?`<line x1="${x+bw+5}" y1="59" x2="${x+bw+${Math.max(12,(w-40)/parts.length-10)}}" y2="59" stroke="#087f73" stroke-width="2"/><polygon points="${x+bw+${Math.max(12,(w-40)/parts.length-10)}} ,59 ${x+bw+${Math.max(5,(w-40)/parts.length-17)}} ,54 ${x+bw+${Math.max(5,(w-40)/parts.length-17)}} ,64" fill="#087f73"/>`:''}</g>`
+   const label=p.length>22?p.slice(0,21)+"…":p;
+   let arrow="";
+   if(i<parts.length-1){
+     const lineEnd=x+bw+Math.max(12,(w-40)/parts.length-10);
+     const head=x+bw+Math.max(5,(w-40)/parts.length-17);
+     arrow=`<line x1="${x+bw+5}" y1="59" x2="${lineEnd}" y2="59" stroke="#087f73" stroke-width="2"/><polygon points="${lineEnd},59 ${head},54 ${head},64" fill="#087f73"/>`;
+   }
+   const fill=i%3===0?'#e5f4f1':i%3===1?'#fff2d9':'#eef0ff';
+   return `<g><rect x="${x}" y="28" width="${bw}" height="62" rx="12" fill="${fill}" stroke="#cbded9"/><text x="${x+bw/2}" y="54" text-anchor="middle" font-size="11" font-weight="700" fill="#17302b">${label}</text>${arrow}</g>`;
  }).join("");
  return `<div class="flow-diagram"><div class="diagram-title">Process flow</div><svg viewBox="0 0 ${w} 115" role="img" aria-label="${flow}">${boxes}</svg></div>`;
 }
 document.getElementById("process").innerHTML=process.map((x,i)=>`<article class="process-card expandable"><button class="process-main" aria-expanded="false"><div class="step-no">${x[0]}</div><div class="process-copy"><h3>${x[1]}</h3><p>${x[2]}</p></div><code>${x[3]}</code><span class="expand-icon">+</span></button><div class="process-detail"><div class="lesson-intro"><b>Detailed explanation</b><p>${x[4]}</p></div>${flowSvg(x[7])}<div class="lesson-grid"><div><b>Key transaction / app</b><p><code>${x[5]}</code></p></div><div><b>Checks & exam focus</b><p>${x[6]}</p></div></div></div></article>`).join("");
 document.querySelectorAll(".process-main").forEach(btn=>btn.addEventListener("click",()=>{const card=btn.closest(".process-card");const open=card.classList.toggle("open");btn.setAttribute("aria-expanded",open);card.querySelector(".expand-icon").textContent=open?"−":"+";}));
 
-document.querySelectorAll(".process-main").forEach(btn=>btn.addEventListener("click",()=>{const card=btn.closest(".process-card");const open=card.classList.toggle("open");btn.setAttribute("aria-expanded",open);card.querySelector(".expand-icon").textContent=open?"−":"+";}));
 document.getElementById("scenarioGrid").innerHTML=scenarios.map(x=>`<article class="scenario-card"><span class="tag">${x[1]}</span><h3>${x[0]}</h3><p>${x[2]}</p><details><summary>Model approach</summary><p>${x[3]}</p></details></article>`).join("");
 
 function renderTcodes(filter=""){document.getElementById("tcodeBody").innerHTML=tcodes.filter(x=>x.join(" ").toLowerCase().includes(filter.toLowerCase())).map(x=>`<tr><td>${x[0]}</td><td>${x[1]}</td><td>${x[2]}</td></tr>`).join("");}
