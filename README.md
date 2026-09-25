@@ -6,7 +6,7 @@ A free, static personal learning website covering:
 - SAP SD T-codes and shortcuts
 - SAP SD interview questions & model answers
 - DTZ B1 preparation, grammar and official model-paper links
-- CV-aligned job search for Germany, Austria, Switzerland and the UK
+- CV-aligned mid-level job search for Germany, Austria, Switzerland and the UK
 - Local progress tracking, search and dark mode
 
 ## Run locally
@@ -56,3 +56,6 @@ The job-matching profile was built from the uploaded CV:
 - PMP® certification
 - English and German B1
 - Berlin, Germany; open to relocation
+
+## Job-level filter
+The job board is intentionally focused on mid-level / consultant roles. Senior, lead, manager and architect roles are excluded from the displayed snapshot. Some countries may show a live search link rather than a verified individual posting when a current non-senior match cannot be confirmed.
